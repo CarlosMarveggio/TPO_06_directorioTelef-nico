@@ -173,8 +173,17 @@ public class BorrarCliente extends javax.swing.JInternalFrame {
         txtBorrarDni.setText(buscado.getDni()+"");
         txtBorrarNombre.setText(buscado.getNombre());
         principal.miDirectorio.borrarCliente(telefono);
+        limpiar();
     }//GEN-LAST:event_btnBorrarActionPerformed
-
+    public void limpiar(){
+    
+        txtBorrarApellido.setText("");
+        txtBorrarCiudad.setText("");
+        txtBorrarDireccion.setText("");
+        txtBorrarDni.setText("");
+        txtBorrarNombre.setText("");
+        txtBorrarTelefono.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBorrar;
