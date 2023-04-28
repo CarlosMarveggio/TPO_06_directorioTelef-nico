@@ -1,5 +1,8 @@
 package Formularios;
 
+import javax.swing.JOptionPane;
+import tel.Cliente;
+
 /**
  *
  * @author SE31452
@@ -36,6 +39,8 @@ public class FormAgregarClientes extends javax.swing.JInternalFrame {
         txtAgrNombre = new javax.swing.JTextField();
         txtAgrCiudad = new javax.swing.JTextField();
         txtAgrTelefono = new javax.swing.JTextField();
+        lblAgrDireccion = new javax.swing.JLabel();
+        txtAgrDireccion = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -86,12 +91,14 @@ public class FormAgregarClientes extends javax.swing.JInternalFrame {
             }
         });
 
+        lblAgrDireccion.setText("Dirección");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(105, Short.MAX_VALUE)
+                .addContainerGap(86, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnAgregar)
@@ -101,26 +108,25 @@ public class FormAgregarClientes extends javax.swing.JInternalFrame {
                         .addComponent(btnAgrSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(50, 50, 50))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblAgrTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(113, 113, 113))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblAgrTelefono)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblAgrDni, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblAgrApellido)
-                                    .addComponent(lblAgrNombre)
-                                    .addComponent(lblAgrCiudad))
-                                .addGap(1, 1, 1)))
-                        .addGap(53, 53, 53)
+                            .addComponent(lblAgrDni, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAgrApellido)
+                            .addComponent(lblAgrNombre)
+                            .addComponent(lblAgrCiudad)
+                            .addComponent(lblAgrDireccion))
+                        .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtAgrDni)
                             .addComponent(txtAgrApellido)
                             .addComponent(txtAgrNombre)
                             .addComponent(txtAgrCiudad)
-                            .addComponent(txtAgrTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(82, 82, 82))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblAgrTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(113, 113, 113))))
+                            .addComponent(txtAgrTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                            .addComponent(txtAgrDireccion))
+                        .addGap(82, 82, 82))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,11 +149,15 @@ public class FormAgregarClientes extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtAgrCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAgrCiudad))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtAgrTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAgrTelefono))
-                .addGap(27, 27, 27)
+                    .addComponent(lblAgrDireccion)
+                    .addComponent(txtAgrDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAgrTelefono)
+                    .addComponent(txtAgrTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAgregar)
                     .addComponent(btnAgrNuevo)
@@ -160,6 +170,13 @@ public class FormAgregarClientes extends javax.swing.JInternalFrame {
 
     private void btnAgrNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgrNuevoActionPerformed
         // TODO add your handling code here:
+        txtAgrDni.setText("");
+        txtAgrApellido.setText("");
+        txtAgrNombre.setText("");
+        txtAgrCiudad.setText("");
+        txtAgrDireccion.setText("");
+        txtAgrTelefono.setText("");
+        txtAgrDni.requestFocus();
     }//GEN-LAST:event_btnAgrNuevoActionPerformed
 
     private void btnAgrSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgrSalirActionPerformed
@@ -169,12 +186,46 @@ public class FormAgregarClientes extends javax.swing.JInternalFrame {
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
+        try {
+            int dni = Integer.parseInt(txtAgrDni.getText());
+            String nombre = txtAgrNombre.getText();
+            String apellido = txtAgrApellido.getText();
+            String ciudad = txtAgrCiudad.getText();
+            String direccion = txtAgrDireccion.getText();
+            String telefono = txtAgrTelefono.getText();
+
+            Cliente miCliente = new Cliente(dni, nombre, apellido, ciudad, direccion);
+            
+            boolean resul = principal.miDirectorio.agregarCliente(telefono, miCliente);
+            if (resul) {
+
+                JOptionPane.showMessageDialog(this, "Cliente agregado exitosamente");
+                limpiar();
+            } else {
+                JOptionPane.showMessageDialog(this, "No se guardó!!! Telefono duplicado");
+            }
+
+        } catch (Exception ex) {
+            txtAgrDni.setText("");
+            JOptionPane.showMessageDialog(this, "No ingreso un DNI válido");
+            txtAgrDni.requestFocus();
+        }
+
+
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void txtAgrDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAgrDniActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAgrDniActionPerformed
-
+    public void limpiar(){
+    
+        txtAgrApellido.setText("");
+        txtAgrCiudad.setText("");
+        txtAgrDireccion.setText("");
+        txtAgrDni.setText("");
+        txtAgrNombre.setText("");
+        txtAgrTelefono.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgrNuevo;
@@ -182,12 +233,14 @@ public class FormAgregarClientes extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnAgregar;
     private javax.swing.JLabel lblAgrApellido;
     private javax.swing.JLabel lblAgrCiudad;
+    private javax.swing.JLabel lblAgrDireccion;
     private javax.swing.JLabel lblAgrDni;
     private javax.swing.JLabel lblAgrNombre;
     private javax.swing.JLabel lblAgrTelefono;
     private javax.swing.JLabel lblAgrTitulo;
     private javax.swing.JTextField txtAgrApellido;
     private javax.swing.JTextField txtAgrCiudad;
+    private javax.swing.JTextField txtAgrDireccion;
     private javax.swing.JTextField txtAgrDni;
     private javax.swing.JTextField txtAgrNombre;
     private javax.swing.JTextField txtAgrTelefono;

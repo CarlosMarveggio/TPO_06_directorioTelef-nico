@@ -1,10 +1,13 @@
 package Formularios;
 
+import tel.Directorio;
+
 /**
  *
  * @author SE31452
  */
 public class principal extends javax.swing.JFrame {
+public static Directorio miDirectorio=new Directorio();
 
     /**
      * Creates new form principal
@@ -12,7 +15,8 @@ public class principal extends javax.swing.JFrame {
     public principal() {
         initComponents();
     }
-
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,8 +31,10 @@ public class principal extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
-        mnuDirectorio = new javax.swing.JMenu();
+        mnuAdministracion = new javax.swing.JMenu();
         mnuEscritorioAgregar = new javax.swing.JMenuItem();
+        mnuBuscarCliente = new javax.swing.JMenuItem();
+        mnuBorrarCliente = new javax.swing.JMenuItem();
         mnuSalir = new javax.swing.JMenu();
         mnuEscritorioSalir = new javax.swing.JMenuItem();
 
@@ -40,7 +46,7 @@ public class principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Directorio telefónico");
-        setPreferredSize(new java.awt.Dimension(600, 400));
+        setPreferredSize(new java.awt.Dimension(700, 500));
 
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
@@ -53,10 +59,10 @@ public class principal extends javax.swing.JFrame {
             .addGap(0, 379, Short.MAX_VALUE)
         );
 
-        mnuDirectorio.setText("Directorio");
-        mnuDirectorio.addActionListener(new java.awt.event.ActionListener() {
+        mnuAdministracion.setText("Administración");
+        mnuAdministracion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnuDirectorioActionPerformed(evt);
+                mnuAdministracionActionPerformed(evt);
             }
         });
 
@@ -66,9 +72,25 @@ public class principal extends javax.swing.JFrame {
                 mnuEscritorioAgregarActionPerformed(evt);
             }
         });
-        mnuDirectorio.add(mnuEscritorioAgregar);
+        mnuAdministracion.add(mnuEscritorioAgregar);
 
-        jMenuBar1.add(mnuDirectorio);
+        mnuBuscarCliente.setText("Buscar Cliente");
+        mnuBuscarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuBuscarClienteActionPerformed(evt);
+            }
+        });
+        mnuAdministracion.add(mnuBuscarCliente);
+
+        mnuBorrarCliente.setText("Borrar Cliente");
+        mnuBorrarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuBorrarClienteActionPerformed(evt);
+            }
+        });
+        mnuAdministracion.add(mnuBorrarCliente);
+
+        jMenuBar1.add(mnuAdministracion);
 
         mnuSalir.setText("Salir");
 
@@ -98,10 +120,10 @@ public class principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void mnuDirectorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuDirectorioActionPerformed
+    private void mnuAdministracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAdministracionActionPerformed
         // TODO add your handling code here:
                 
-    }//GEN-LAST:event_mnuDirectorioActionPerformed
+    }//GEN-LAST:event_mnuAdministracionActionPerformed
 
     private void mnuEscritorioAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuEscritorioAgregarActionPerformed
         // TODO add your handling code here:
@@ -117,6 +139,26 @@ public class principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_mnuEscritorioSalirActionPerformed
+
+    private void mnuBuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuBuscarClienteActionPerformed
+        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        BuscarCliente busCl = new BuscarCliente();
+        busCl.setVisible(true);
+        escritorio.add(busCl);
+        escritorio.moveToFront(busCl);
+    }//GEN-LAST:event_mnuBuscarClienteActionPerformed
+
+    private void mnuBorrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuBorrarClienteActionPerformed
+        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        BorrarCliente borrCl = new BorrarCliente();
+        borrCl.setVisible(true);
+        escritorio.add(borrCl);
+        escritorio.moveToFront(borrCl);
+    }//GEN-LAST:event_mnuBorrarClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,7 +201,9 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenu mnuDirectorio;
+    private javax.swing.JMenu mnuAdministracion;
+    private javax.swing.JMenuItem mnuBorrarCliente;
+    private javax.swing.JMenuItem mnuBuscarCliente;
     private javax.swing.JMenuItem mnuEscritorioAgregar;
     private javax.swing.JMenuItem mnuEscritorioSalir;
     private javax.swing.JMenu mnuSalir;

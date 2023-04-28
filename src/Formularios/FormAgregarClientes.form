@@ -28,7 +28,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace pref="105" max="32767" attributes="0"/>
+              <EmptySpace pref="86" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="btnAgregar" min="-2" max="-2" attributes="0"/>
@@ -39,31 +39,28 @@
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
+                      <Component id="lblAgrTitulo" min="-2" pref="207" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblAgrTelefono" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblAgrDni" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
-                                  <Component id="lblAgrApellido" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblAgrNombre" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblAgrCiudad" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="lblAgrDni" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
+                          <Component id="lblAgrApellido" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblAgrNombre" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblAgrCiudad" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblAgrDireccion" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="txtAgrDni" max="32767" attributes="0"/>
                           <Component id="txtAgrApellido" max="32767" attributes="0"/>
                           <Component id="txtAgrNombre" max="32767" attributes="0"/>
                           <Component id="txtAgrCiudad" max="32767" attributes="0"/>
-                          <Component id="txtAgrTelefono" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
+                          <Component id="txtAgrTelefono" alignment="0" pref="158" max="32767" attributes="0"/>
+                          <Component id="txtAgrDireccion" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="lblAgrTitulo" min="-2" pref="207" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -94,12 +91,17 @@
                   <Component id="txtAgrCiudad" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblAgrCiudad" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtAgrTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblAgrTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAgrDireccion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtAgrDireccion" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblAgrTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtAgrTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="22" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnAgrNuevo" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -186,6 +188,13 @@
     <Component class="javax.swing.JTextField" name="txtAgrCiudad">
     </Component>
     <Component class="javax.swing.JTextField" name="txtAgrTelefono">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblAgrDireccion">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Direcci&#xf3;n"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtAgrDireccion">
     </Component>
   </SubComponents>
 </Form>

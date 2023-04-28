@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import javax.swing.JOptionPane;
 
 // buscarTeléfono() que en base a un apellido nos devuelve una lista con los nros de 
 //teléfono asociados a dicho apellido.
@@ -31,7 +32,8 @@ public class Directorio {
                 return value;
             }
         }
-        System.out.println("No se encontró el teléfono asociado a un cliente");
+        JOptionPane.showMessageDialog(null,"No se encontró el teléfono asociado a un cliente");
+        //System.out.println("No se encontró el teléfono asociado a un cliente");
         return null;
     }
     
@@ -69,9 +71,11 @@ public class Directorio {
     public void borrarCliente(String telefono) {
         Cliente aux = registro.remove(telefono);
         if (aux != null) {
-            System.out.println("Se ha eliminado correctamente.");
+            JOptionPane.showMessageDialog(null,"Se ha eliminado correctamente.");
+            //System.out.println("Se ha eliminado correctamente.");
         } else {
-            System.out.println("Cliente no encontrado.");
+               JOptionPane.showMessageDialog(null,"Cliente no encontrado.");
+               //System.out.println("Cliente no encontrado.");
         }
     }
 }
